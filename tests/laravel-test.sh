@@ -30,10 +30,10 @@ echo "Preparing Laravel"
 ./artisan make:resource ExampleResource
 ./artisan make:rule ExampleRule
 ./artisan make:seeder ExampleSeeder
-./artisan make:test ExampleTest
+./artisan make:test ExampleThingTest
 
 echo "Adding package from source"
-sed -e 's|"type": "project",|&"repositories": [ { "type": "path", "url": "../psalm-plugin-laravel" } ],|' -i composer.json
+sed -e 's|"type": "project",|&"repositories": [ { "type": "path", "url": "../psalm-plugin-laravel" } ],|' -i.orig composer.json
 COMPOSER_MEMORY_LIMIT=-1 composer require --dev "psalm/plugin-laravel:*"
 
 echo "Analyzing Laravel"
